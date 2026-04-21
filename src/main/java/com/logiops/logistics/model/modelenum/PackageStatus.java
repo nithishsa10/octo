@@ -1,4 +1,4 @@
-package com.logiops.logistics.model;
+package com.logiops.logistics.model.modelenum;
 
 public enum PackageStatus {
     PENDING,

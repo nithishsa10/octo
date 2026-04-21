@@ -1,5 +1,6 @@
 package com.logiops.logistics.model;
 
+import com.logiops.logistics.model.modelenum.UserRole;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;

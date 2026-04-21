@@ -1,5 +1,6 @@
 package com.logiops.logistics.model;
 
+import com.logiops.logistics.model.modelenum.PackageStatus;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
@@ -16,7 +17,8 @@ public class Package {
     @GeneratedValue
     private UUID id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "trip_id")
     private UUID tripId;
 
     @Column
@@ -34,7 +36,7 @@ public class Package {
             column = @Column(columnDefinition = "GEOGRAPHY(POINT, 4326)")
         )
     })
-    private String destinationAddress;
+    private Address destinationAddress;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, columnDefinition = "package_status")

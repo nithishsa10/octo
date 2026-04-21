@@ -1,6 +1,8 @@
 package com.logiops.logistics.model;
 
+import com.logiops.logistics.model.modelenum.TripStatus;
 import jakarta.persistence.*;
+import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.geo.Point;
 
@@ -9,6 +11,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "trip")
+@Data
 public class Trip {
     @Id
     @GeneratedValue
